@@ -15,19 +15,36 @@ class SayHello(App):
     def build(self):
         self.window = GridLayout()
         self.window.cols = 1
-        self.window.size_hint = (0.4, 0.3)
+        self.window.size_hint = (0.6, 0.4)
+        self.window.pos_hint = {"center_x": 0.5, "center_y": 0.5}
         # add widgets to window
 
         # image widget
         self.window.add_widget(Image(source="Hello.png"))
+       
         # Label widget
-        self.greeting = Label(text="What's your name? ")
+        self.greeting = Label(
+                        text="What's your name? ",
+                        font_size = 18,
+                        color='#00FFCE'
+                        )
         self.window.add_widget(self.greeting)
+        
         # text input widget
-        self.user = TextInput(multiline=False)
+        self.user = TextInput(
+                    multiline=False,
+                    padding_y = (10,10),
+                    size_hint = (1, 0.5)
+                    )
         self.window.add_widget(self.user)
+        
         # button widget
-        self.button = Button(text="GREET")
+        self.button = Button(
+                        text="GREET",
+                        size_hint = (1,0.5),
+                        bold = True,
+                        background_color = '#00FFCE',
+                        )
         self.button.bind(on_press=self.callback)
         self.window.add_widget(self.button)
 
@@ -38,5 +55,4 @@ class SayHello(App):
         self.greeting.text = f"Hello {self.user.text}!"
 
 
-if __name__ == "__main__":
-    SayHello().run()
+ 
