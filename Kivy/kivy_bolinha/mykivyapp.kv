@@ -1,0 +1,11 @@
+#:kivy 2.0.0
+
+<MyWidget>:
+    orientation: 'vertical'
+    Button:
+        id: btn
+        text: 'Incrementar'
+        on_release: root.incrementar()
+    Label:
+        id: lb1
+        text: '0'
