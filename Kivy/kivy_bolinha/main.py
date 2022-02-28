@@ -1,8 +1,6 @@
 from imports import *
 
-class MyWidget(FloatLayout):
-    def incrementar(self):
-        self.ids['lb1'].text = str(int(self.ids['lb1'].text)+1)
+class MyWidget(BoxLayout):
     pass
 
 class MyKivyApp(App):
@@ -11,10 +9,12 @@ class MyKivyApp(App):
     """
     def build(self):
         """
-        Construir o aplicativo
+        Método para construir o aplicativo
         """
         return MyWidget()
 
 
 if __name__ == "__main__":
+    Window.size = (800,600)
+    Window.fullscreen = False
     MyKivyApp().run()
