@@ -1,5 +1,3 @@
-from audioop import mul
-from re import MULTILINE
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
@@ -13,6 +11,7 @@ class SayHello(App):
     Classe App
     """
     def build(self):
+        #returns a window object with all it's widgets
         self.window = GridLayout()
         self.window.cols = 1
         self.window.size_hint = (0.6, 0.4)
@@ -55,4 +54,6 @@ class SayHello(App):
         self.greeting.text = f"Hello {self.user.text}!"
 
 
- 
+ # run Say Hello App Calss
+if __name__ == "__main__":
+    SayHello().run()
